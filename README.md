@@ -8,7 +8,7 @@ Type a GitHub username and walk through the graveyard of your abandoned projects
 Read their epitaphs. See your *Abandoned Projects Wrapped*. Then raise one from the
 dead with a **GitHub Copilot–ready revival plan**.
 
-**[ Live demo → ](#)** &nbsp;·&nbsp; built for the [GitHub Finish-Up-A-Thon Challenge](https://dev.to/challenges/github-2026-05-21)
+**[ Live demo → ](https://chintanonweb.github.io/lazarus/)** &nbsp;·&nbsp; built for the [GitHub Finish-Up-A-Thon Challenge](https://dev.to/challenges/github-2026-05-21)
 
 </div>
 
