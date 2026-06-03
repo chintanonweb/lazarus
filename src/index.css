@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-grave-night text-grave-bone font-mono antialiased;
+    margin: 0;
+    /* faint film grain over the whole scene */
+    background-image: radial-gradient(circle at 50% -20%, #141b29 0%, #0a0e14 55%, #05070b 100%);
+  }
+  ::selection {
+    @apply bg-grave-ghost/30 text-grave-moon;
+  }
+  button {
+    font-family: inherit;
+  }
+}
+
+@layer components {
+  /* Text engraved into stone: light top bevel + dark inset shadow. */
+  .engraved {
+    color: #c9c3b4;
+    text-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.08),
+      0 -1px 1px rgba(0, 0, 0, 0.7);
+  }
+  .moonglow {
+    text-shadow: 0 0 24px rgba(232, 230, 221, 0.25);
+  }
+  .ghostglow {
+    text-shadow: 0 0 18px rgba(127, 212, 193, 0.55);
+  }
+
+  /* The headstone silhouette: a rounded-arch top. */
+  .headstone {
+    border-top-left-radius: 48% 64px;
+    border-top-right-radius: 48% 64px;
+    background: linear-gradient(180deg, #2c3543 0%, #222a36 40%, #1a212c 100%);
+    box-shadow:
+      inset 0 2px 0 rgba(255, 255, 255, 0.06),
+      inset 0 -30px 40px rgba(0, 0, 0, 0.45),
+      0 22px 30px -18px rgba(0, 0, 0, 0.9);
+  }
+}
+
+/* Grain overlay element */
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
